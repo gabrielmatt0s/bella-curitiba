@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella Curitiba Panificadora e Confeitaria</title>
+  <meta name="description" content="Bella Curitiba Panificadora: pães artesanais, fermentação natural e produção própria em Curitiba.">
+  <link rel="icon" href="assets/logos/favicon-bella-curitiba.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/logos/favicon-bella-curitiba-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/favicon-bella-curitiba-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon-bella-curitiba-32x32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="header__container">
+      <a href="#inicio" class="header__logo">
+        <img src="assets/logos/logo-principal-bella-curitiba.svg" alt="Bella Curitiba Panificadora">
+      </a>
+
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#producao">Produção Artesanal</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#trabalhe-conosco">Trabalhe Conosco</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- WhatsApp principal ainda não confirmado. Link provisório. -->
+      <a href="#" class="header__btn header__btn--fale" data-status="confirmar WhatsApp principal">Fale conosco</a>
+
+      <!-- Botão exibido apenas no mobile, no lugar do Fale conosco -->
+      <a href="#trabalhe-conosco" class="header__btn header__btn--trabalhe">Trabalhe conosco</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero">
+      <!-- Vídeo de fundo provisório: aguardando material real de produção -->
+      <video class="hero__video" autoplay muted loop playsinline poster="assets/images/hero-placeholder.jpg">
+        <source src="assets/videos/hero-placeholder.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <div class="hero__logo">
+          <img src="assets/logos/logo-fundo-escuro-bella-curitiba-transparente.svg" alt="Bella Curitiba Panificadora">
+        </div>
+        <h1 class="hero__headline">Pães artesanais e produção própria em Curitiba</h1>
+        <p class="hero__subtitle">Tradição, fermentação natural e sabor de padaria de verdade todos os dias.</p>
+
+        <div class="hero__buttons">
+          <!-- WhatsApp principal ainda não confirmado. Link provisório. -->
+          <a href="#" class="btn btn--primary" data-status="confirmar WhatsApp principal">Falar no WhatsApp</a>
+          <a href="#contato" class="btn btn--secondary">Como chegar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section id="sobre" class="sobre">
+      <div class="sobre__container">
+        <div class="sobre__texto reveal reveal--left">
+          <h2>Sobre a Bella Curitiba</h2>
+          <p>
+            A Bella Curitiba Panificadora é uma padaria localizada em Curitiba, com foco em produção própria,
+            atendimento no balcão e produtos preparados com cuidado todos os dias.
+          </p>
+          <p>
+            <em>A história completa da empresa será confirmada com Luciano para que o texto final represente a padaria com fidelidade.</em>
+          </p>
+
+          <div class="sobre__destaques">
+            <div class="sobre__item">
+              <h3>Tradição</h3>
+              <p>Uma padaria feita para quem valoriza qualidade, cuidado e atendimento próximo.</p>
+            </div>
+            <div class="sobre__item">
+              <h3>Produção própria</h3>
+              <p>Produtos preparados diariamente, com atenção ao processo e ao sabor.</p>
+            </div>
+            <div class="sobre__item">
+              <h3>Atendimento no balcão</h3>
+              <p>Experiência presencial, contato direto com o cliente e rotina de padaria de verdade.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre__imagem reveal">
+          <img src="assets/images/fachada/fachada-secao-sobre.jpeg" alt="Fachada da Bella Curitiba Panificadora">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUÇÃO ARTESANAL ===================== -->
+    <section id="producao" class="producao">
+      <div class="producao__container">
+        <h2 class="reveal">Produção artesanal todos os dias</h2>
+        <p class="producao__subtitle reveal">Da massa ao forno, a Bella Curitiba valoriza o processo de produção e o cuidado com cada produto.</p>
+
+        <div class="producao__cards reveal--group">
+          <div class="producao__card reveal">
+            <div class="card-carrossel">
+              <div class="card-carrossel__track">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-01.JPEG" alt="Pães multigrãos cobertos de sementes de gergelim, linhaça e girassol" loading="lazy">
+                <img class="card-carrossel__img--pao-rustico" src="assets/images/paes-e-broas/pao-02.JPEG" alt="Pão rústico de fermentação natural com casca dourada e farinha" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-03.JPEG" alt="Pão integral redondo com sementes e grãos" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-04.JPEG" alt="Pão caseiro de casca dourada e miolo macio" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/broa-02.JPEG" alt="Broa escura com cobertura de gergelim e linhaça" loading="lazy">
+              </div>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="card-carrossel__dots"></div>
+            </div>
+            <h3>Pães integrais e broas</h3>
+            <p>Pães tradicionais, integrais e broas para diferentes momentos do dia.</p>
+          </div>
+          <div class="producao__card reveal">
+            <div class="card-carrossel">
+              <div class="card-carrossel__track">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-01.JPEG" alt="Focaccia de fermentação natural com tomatinhos e alecrim" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-02.JPEG" alt="Fatia de focaccia com berinjela, azeitonas e legumes assados" loading="lazy">
+                <img class="card-carrossel__img--rodape" src="assets/images/fermentacao-natural/fermentacao-natural-03.JPEG" alt="Ciabattas de azeitona com casca dourada e crocante" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-04.JPEG" alt="Baguetes rústicas com flor de sal e alecrim" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-05.JPEG" alt="Baguetes recheadas de fermentação natural" loading="lazy">
+              </div>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="card-carrossel__dots"></div>
+            </div>
+            <h3>Fermentação natural</h3>
+            <p>Processos que valorizam textura, aroma e qualidade.</p>
+          </div>
+          <div class="producao__card reveal">
+            <div class="card-carrossel">
+              <div class="card-carrossel__track">
+                <img src="assets/images/balcao/balcao-04.JPEG" alt="Prateleiras de bolos caseiros e biscoitos variados" loading="lazy">
+                <img src="assets/images/balcao/balcao-02.JPEG" alt="Geladeira de frios com queijos e embutidos fatiados" loading="lazy">
+                <img class="card-carrossel__img--direita" src="assets/images/balcao/balcao-03.JPEG" alt="Balcão de frios com linguiças artesanais, queijos coloniais e embutidos" loading="lazy">
+                <img src="assets/images/balcao/balcao-05.JPEG" alt="Vitrine de pães com produção diária, pães de queijo e baguetes" loading="lazy">
+                <img src="assets/images/balcao/balcao-01.JPEG" alt="Vitrine de salgados com coxinhas, sfihas, mini pastéis, croissants e empadões" loading="lazy">
+              </div>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="card-carrossel__dots"></div>
+            </div>
+            <h3>Produtos de balcão</h3>
+            <p>Opções práticas para quem passa pela padaria todos os dias.</p>
+          </div>
+          <div class="producao__card reveal">
+            <div class="card-carrossel">
+              <div class="card-carrossel__track">
+                <img src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
+              </div>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="card-carrossel__dots"></div>
+            </div>
+            <h3>Confeitaria</h3>
+            <p>Doces e produtos selecionados para complementar a experiência da padaria.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AMBIENTE ===================== -->
+    <section id="ambiente" class="ambiente">
+      <div class="ambiente__container">
+        <h2 class="reveal">Um espaço para passar, escolher e levar qualidade</h2>
+        <p class="reveal">A Bella Curitiba valoriza a experiência presencial, o atendimento no balcão e o contato direto com seus clientes.</p>
+
+        <!-- Fotos reais do ambiente pendentes -->
+        <div class="ambiente__galeria reveal--group">
+          <!-- Primeiro card: carrossel com as duas fotos da fachada -->
+          <div class="card-carrossel reveal">
+            <div class="card-carrossel__track">
+              <img src="assets/images/fachada/fachada-completa.jpg" alt="Fachada completa da Bella Curitiba Panificadora vista da rua" loading="lazy">
+              <img class="ambiente__foto-letreiro" src="assets/images/fachada/fachada-2.jpeg" alt="Fachada da Bella Curitiba Panificadora com letreiro em relevo" loading="lazy">
+            </div>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="card-carrossel__dots"></div>
+          </div>
+          <img class="reveal" src="assets/images/ambiente-interior-placeholder.jpg" alt="Interior (foto será confirmada com Luciano)">
+          <img class="reveal" src="assets/images/ambiente-balcao-placeholder.jpg" alt="Balcão (foto será confirmada com Luciano)">
+          <img class="reveal" src="assets/images/ambiente-vitrine-placeholder.jpg" alt="Vitrine (foto será confirmada com Luciano)">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEPOIMENTOS ===================== -->
+    <section id="depoimentos" class="depoimentos">
+      <div class="depoimentos__container">
+        <h2 class="reveal">O que os clientes dizem</h2>
+        <p class="depoimentos__subtitle reveal">Avaliações reais de clientes que conhecem a Bella Curitiba.</p>
+
+        <!-- 9 avaliações reais do Google, organizadas em 3 slides de 3 cards -->
+        <div class="depoimentos__carousel">
+          <div class="depoimentos__track">
+
+            <div class="depoimentos__slide reveal--group">
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNKb3YtcnNnRRAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/camila-belato.webp" alt="Foto de Camila Belato" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Camila Belato</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Quando conheci a padaria me apaixonei pelo pão rústico de azeitonas, mas todos os pães são incríveis! Vcs estão ficando cada vez melhores na arte da panificação, os pães de fermentação natural, as mini pizzas, os chineques salgados, olha....difícil escolher o melhor! A confeitaria é maravilhosa tb! Mas hoje tenho um top 1: o pão rústico de gorgonzola! Parabéns, melhor padaria da cidade 🙏🙏🙏</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUN3MjZuSkNnEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-muller.webp" alt="Foto de Leandro Müller" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Leandro Müller</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Todos os produtos da padaria são de extrema qualidade, peguei uma cuca de banana que estava em promoção, me surpreendi de tão maravilhosa, o pão de queijo deles então, nem se fala, não se acha igual em outro lugar, o pão com ovos mexidos é delicioso, a padaria está de parabéns!</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURWdTYyb2lnRRAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/ana-luiza-camilo.webp" alt="Foto de Ana Luiza Camilo" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Ana Luiza Camilo</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Lugar incrível e aconchegante, muita variedade de produtos e com uma ótima qualidade, encontrei lá muitos produtos que não havia visto em outros lugares, super recomendo... Há e o atendimento é excelente também....</p>
+              </a>
+            </div>
+
+            <div class="depoimentos__slide reveal--group">
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR4b05fQVB3EAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/scheila-mara.webp" alt="Foto de Scheila Mara" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Scheila Mara</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Super recomendo, vitrine cheia de coisas diferentes e lindas de ver. O bolo de abacaxi maravilhoso, pão com linguiça Blumenau perfeito e super recheado. Provei o rocambole de abacaxi tbm, muitooo bom. Atendimento excelente, meninas simpáticas.</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURid0tIdlhnEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/jhonatas-zahorcak.webp" alt="Foto de Jhonatas Zahorcak" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Jhonatas Zahorcak</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Sempre bem atendido. Todos os itens vendidos são ótimos, alimentos saborosos, bem feitos, ingredientes de primeira qualidade.</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3N0ppelRBEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/ednilson-silva.webp" alt="Foto de Ednilson Silva" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Ednilson Silva</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Tudo bom!! Delícia!!! Pães de fermentação natural! Bolos! Eu fiquei freguês!</p>
+              </a>
+            </div>
+
+            <div class="depoimentos__slide reveal--group">
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xsR2N6Tk1aM1prWVRWbmNEZGFjV1p2UTJ0RmRIYxAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/marcus-ziemann.webp" alt="Foto de Marcus Ziemann" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Marcus Ziemann</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Muito boa. O sabor dos pães é incrível. Ambiente agradável com fundo musical convidativo. Atendimento rápido e eficiente no setor de balcão.</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sT2VsUktSa1JsZEhkV1ZtZFJVek5sV25BdFVIYxAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-marques-hoffmann.webp" alt="Foto de Leandro Marques Hoffmann" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Leandro Marques Hoffmann</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Recomendo os pães rústicos, são deliciosos.</p>
+              </a>
+              <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURCeXZpd0ZBEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
+                <div class="depoimentos__meta">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/douglas-presibella.webp" alt="Foto de Douglas Presibella" loading="lazy" width="300" height="300">
+                  <p class="depoimentos__autor">Douglas Presibella</p>
+                </div>
+                <div class="depoimentos__nota" aria-label="5 estrelas">★★★★★</div>
+                <p class="depoimentos__texto">Um bom dia começa dentro de uma padaria. Simplesmente a melhor opção do mais simples ao mais sofisticado. Razão pela qual eu recomendo e assino embaixo. Meus parabéns!</p>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="depoimentos__nav">
+            <button type="button" class="depoimentos__arrow depoimentos__arrow--prev" aria-label="Avaliações anteriores">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <!-- Bolinhas geradas pelo script.js: 9 no mobile (janela de 3 visíveis), 3 no desktop -->
+            <div class="depoimentos__dots"></div>
+            <button type="button" class="depoimentos__arrow depoimentos__arrow--next" aria-label="Próximas avaliações">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRABALHE CONOSCO ===================== -->
+    <section id="trabalhe-conosco" class="trabalhe-conosco">
+      <div class="trabalhe-conosco__container reveal">
+        <h2>Trabalhe conosco</h2>
+        <p>
+          A Bella Curitiba está aberta para receber currículos de pessoas comprometidas, responsáveis e
+          com vontade de fazer parte da equipe.
+        </p>
+        <p>Confira as vagas abertas, veja os detalhes de cada função e candidate-se direto pelo site.</p>
+
+        <a href="vagas.html" class="btn btn--primary">Ver vagas disponíveis</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contato" class="footer">
+    <div class="footer__container reveal--group">
+
+      <div class="footer__bloco footer__marca reveal">
+        <img class="footer__marca-brasao" src="assets/logos/logo-brasao-bella-curitiba-transparente.svg" alt="Bella Curitiba Panificadora">
+        <img class="footer__marca-texto" src="assets/logos/logo-texto-bella-curitiba-colorido.svg" alt="Bella Curitiba Panificadora">
+      </div>
+
+      <div class="footer__bloco footer__contato reveal">
+        <h3>Informações</h3>
+        <p><strong>Endereço:</strong> <br> Rua Vicente Ciccarino, 46 - Boa Vista, Curitiba - PR, 82540-120</p>
+        <p><strong>Horário de funcionamento</strong> <br> Segunda a sábado: <br> 06:50 às 20:30</p>
+        <p>Domingo: 07:30 às 20:00</p>
+      </div>
+
+      <div class="footer__bloco footer__localizacao reveal">
+        <h3>Localização</h3>
+        <div class="footer__mapa">
+          <iframe
+            src="https://www.google.com/maps?cid=10285436853242290739&output=embed"
+            title="Localização da Bella Curitiba Panificadora no Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer__bloco footer__redes reveal">
+        <h3>Redes sociais</h3>
+        <!-- Links de redes sociais serão confirmados antes da publicação -->
+        <ul class="footer__redes-list">
+          <li>
+            <a href="https://www.instagram.com/bellacuritibapanificadora/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" class="footer__rede-link footer__rede-link--instagram" aria-label="Instagram">
+              <img src="assets/logo-botao/botao-instagram-transparente.png" alt="" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer__rede-link footer__rede-link--facebook" data-status="confirmar link do Facebook" aria-label="Facebook">
+              <img src="assets/logo-botao/botao-facebook-transparente.png" alt="" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer__rede-link footer__rede-link--whatsapp" data-status="confirmar WhatsApp principal" aria-label="WhatsApp">
+              <img src="assets/logo-botao/botao-whatsapp-transparente.png" alt="" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__copy">
+      <p>&copy; Bella Curitiba Panificadora. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
