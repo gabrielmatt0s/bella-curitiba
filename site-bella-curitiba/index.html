@@ -31,8 +31,7 @@
         </ul>
       </nav>
 
-      <!-- WhatsApp principal ainda não confirmado. Link provisório. -->
-      <a href="#" class="header__btn header__btn--fale" data-status="confirmar WhatsApp principal">Fale conosco</a>
+      <a href="https://wa.me/554191912039?text=Ol%C3%A1%2C%20vim%20pelo%20site%21" class="header__btn header__btn--fale" target="_blank" rel="noopener">Fale conosco</a>
 
       <!-- Botão exibido apenas no mobile, no lugar do Fale conosco -->
       <a href="#trabalhe-conosco" class="header__btn header__btn--trabalhe">Trabalhe conosco</a>
@@ -53,12 +52,17 @@
         <div class="hero__logo">
           <img src="assets/logos/logo-fundo-escuro-bella-curitiba-transparente.svg" alt="Bella Curitiba Panificadora">
         </div>
-        <h1 class="hero__headline">Pães artesanais e produção própria em Curitiba</h1>
+        <h1 class="hero__headline">Delícias artesanais feitas com carinho e dedicação para você </h1>
         <p class="hero__subtitle">Tradição, fermentação natural e sabor de padaria de verdade todos os dias.</p>
 
+        <p class="hero__horario">
+          <span class="hero__horario-titulo">Horário de funcionamento</span>
+          Segunda a sábado: 06:50 às 20:30<br>
+          Domingo: 07:30 às 20:00
+        </p>
+
         <div class="hero__buttons">
-          <!-- WhatsApp principal ainda não confirmado. Link provisório. -->
-          <a href="#" class="btn btn--primary" data-status="confirmar WhatsApp principal">Falar no WhatsApp</a>
+          <a href="https://wa.me/554191912039?text=Ol%C3%A1%2C%20vim%20pelo%20site%21" class="btn btn--primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
           <a href="#contato" class="btn btn--secondary">Como chegar</a>
         </div>
       </div>
@@ -70,18 +74,12 @@
         <div class="sobre__texto reveal reveal--left">
           <h2>Sobre a Bella Curitiba</h2>
           <p>
-            A Bella Curitiba Panificadora é uma padaria localizada em Curitiba, com foco em produção própria,
-            atendimento no balcão e produtos preparados com cuidado todos os dias.
-          </p>
-          <p>
-            <em>A história completa da empresa será confirmada com Luciano para que o texto final represente a padaria com fidelidade.</em>
+            Inspirada em mais de 20 anos de experiência, a Bella Curitiba foi criada para atender
+            aos paladares mais exigentes dentro da área de confeitaria e panificação artesanal.
+            É a nossa família trabalhando com amor e carinho para atender a sua família!
           </p>
 
           <div class="sobre__destaques">
-            <div class="sobre__item">
-              <h3>Tradição</h3>
-              <p>Uma padaria feita para quem valoriza qualidade, cuidado e atendimento próximo.</p>
-            </div>
             <div class="sobre__item">
               <h3>Produção própria</h3>
               <p>Produtos preparados diariamente, com atenção ao processo e ao sabor.</p>
@@ -127,7 +125,7 @@
               </button>
               <div class="card-carrossel__dots"></div>
             </div>
-            <h3>Pães integrais e broas</h3>
+            <h3>Pães de fermentação natural, integrais e broas</h3>
             <p>Pães tradicionais, integrais e broas para diferentes momentos do dia.</p>
           </div>
           <div class="producao__card reveal">
@@ -181,8 +179,11 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
-                <img src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Bolos gelados decorados com coberturas de chocolate, doce de leite e mesclada" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Torta decorada com chantilly, calda de doce de leite, coco e ameixas" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-03.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-04.JPEG" alt="Bolo gelado de coco com abacaxi decorado com chantilly" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-05.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
               </div>
               <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -229,9 +230,42 @@
             </button>
             <div class="card-carrossel__dots"></div>
           </div>
-          <img class="reveal" src="assets/images/ambiente-interior-placeholder.jpg" alt="Interior (foto será confirmada com Luciano)">
-          <img class="reveal" src="assets/images/ambiente-balcao-placeholder.jpg" alt="Balcão (foto será confirmada com Luciano)">
-          <img class="reveal" src="assets/images/ambiente-vitrine-placeholder.jpg" alt="Vitrine (foto será confirmada com Luciano)">
+          <!-- Card do interior: carrossel com as fotos do salão da loja -->
+          <div class="card-carrossel reveal">
+            <div class="card-carrossel__track">
+              <img src="assets/images/interna/interna-01.JPEG" alt="Interior da loja com gôndolas de produtos, adega e corredor do caixa" loading="lazy">
+              <img src="assets/images/interna/interna-02.JPEG" alt="Interior da loja com estantes de biscoitos, geleias, vinhos e produtos coloniais" loading="lazy">
+            </div>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="card-carrossel__dots"></div>
+          </div>
+          <!-- Card do balcão: carrossel com as fotos das estantes de pães e bolos -->
+          <div class="card-carrossel reveal">
+            <div class="card-carrossel__track">
+              <img src="assets/images/balcao/balcao-001.JPEG" alt="Estante de pães de forma, bolos caseiros e produtos de padaria embalados" loading="lazy">
+              <img src="assets/images/balcao/balcao-002.JPEG" alt="Estante com croissants, folhados, cucas, biscoitos e pães artesanais embalados" loading="lazy">
+            </div>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="card-carrossel__dots"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -402,12 +436,12 @@
             </a>
           </li>
           <li>
-            <a href="#" class="footer__rede-link footer__rede-link--facebook" data-status="confirmar link do Facebook" aria-label="Facebook">
+            <a href="https://www.facebook.com/bellacuritibapanificadora" class="footer__rede-link footer__rede-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <img src="assets/logo-botao/botao-facebook-transparente.png" alt="" loading="lazy">
             </a>
           </li>
           <li>
-            <a href="#" class="footer__rede-link footer__rede-link--whatsapp" data-status="confirmar WhatsApp principal" aria-label="WhatsApp">
+            <a href="https://wa.me/554191912039?text=Ol%C3%A1%2C%20vim%20pelo%20site%21" class="footer__rede-link footer__rede-link--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
               <img src="assets/logo-botao/botao-whatsapp-transparente.png" alt="" loading="lazy">
             </a>
           </li>
