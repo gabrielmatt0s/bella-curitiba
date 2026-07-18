@@ -279,6 +279,11 @@ section h2:first-child {
   background-color: var(--color-overlay);
 }
 
+/* Vídeo vertical do hero: só aparece no mobile (no desktop fica o horizontal) */
+.hero__video--mobile {
+  display: none;
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
@@ -525,6 +530,12 @@ section h2:first-child {
   object-position: center 57%;
 }
 
+/* Foto dos bolos gelados: desloca a imagem 15% para baixo no quadro
+   (o recorte sobe e passa a mostrar mais o topo da foto) */
+.card-carrossel__img--bolos {
+  object-position: center 35%;
+}
+
 .card-carrossel__arrow {
   position: absolute;
   top: 50%;
@@ -670,7 +681,14 @@ section h2:first-child {
 /* Foto do letreiro em relevo: enquadra o letreiro no centro
    (por classe, e não por posição, porque o loop do carrossel usa clones) */
 .ambiente__galeria .ambiente__foto-letreiro {
-  object-position: center 5%;
+  object-position: center 20%;
+}
+
+/* Fotos do interior (16:9 num card 4:3): a altura já preenche o quadro,
+   então o deslocamento pra cima é feito com zoom de 15% + translate,
+   mostrando mais o piso e as gôndolas e cortando o teto */
+.ambiente__galeria .ambiente__foto-interna {
+  transform: translateY(-6.5%) scale(1.15);
 }
 
 /* Carrosséis da galeria: mesmo formato 4:3 das demais fotos */
@@ -1286,6 +1304,24 @@ section h2:first-child {
 
   .hero {
     min-height: 80vh;
+  }
+
+  /* No mobile entra o vídeo vertical no lugar do horizontal */
+  .hero__video--desktop {
+    display: none;
+  }
+
+  .hero__video--mobile {
+    display: block;
+  }
+
+  /* Máscara escura sobre o vídeo vertical para manter o texto legível */
+  .hero__overlay {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.65)
+    );
   }
 
   .hero__content {

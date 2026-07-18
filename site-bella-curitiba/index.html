@@ -42,9 +42,13 @@
 
     <!-- ===================== HERO ===================== -->
     <section id="inicio" class="hero">
-      <!-- Vídeo de fundo provisório: aguardando material real de produção -->
-      <video class="hero__video" autoplay muted loop playsinline poster="assets/images/hero-placeholder.jpg">
+      <!-- Vídeo de fundo provisório (desktop): aguardando material real de produção -->
+      <video class="hero__video hero__video--desktop" autoplay muted loop playsinline poster="assets/images/hero-placeholder.jpg">
         <source src="assets/videos/hero-placeholder.mp4" type="video/mp4">
+      </video>
+      <!-- Vídeo vertical da produção: exibido somente no mobile -->
+      <video class="hero__video hero__video--mobile" autoplay muted loop playsinline>
+        <source src="assets/images/video-hero/video-hero-mobile.mp4" type="video/mp4">
       </video>
       <div class="hero__overlay"></div>
 
@@ -155,6 +159,30 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
+                <img src="assets/images/confeitaria/confeitaria-04.JPEG" alt="Bolo gelado de coco com abacaxi decorado com chantilly" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Torta decorada com chantilly, calda de doce de leite, coco e ameixas" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-03.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
+                <img class="card-carrossel__img--bolos" src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Bolos gelados decorados com coberturas de chocolate, doce de leite e mesclada" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-05.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
+              </div>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="card-carrossel__dots"></div>
+            </div>
+            <h3>Confeitaria</h3>
+            <p>Doces e produtos selecionados para complementar a experiência da padaria.</p>
+          </div>
+          <div class="producao__card reveal">
+            <div class="card-carrossel">
+              <div class="card-carrossel__track">
                 <img src="assets/images/balcao/balcao-04.JPEG" alt="Prateleiras de bolos caseiros e biscoitos variados" loading="lazy">
                 <img src="assets/images/balcao/balcao-02.JPEG" alt="Geladeira de frios com queijos e embutidos fatiados" loading="lazy">
                 <img class="card-carrossel__img--direita" src="assets/images/balcao/balcao-03.JPEG" alt="Balcão de frios com linguiças artesanais, queijos coloniais e embutidos" loading="lazy">
@@ -175,30 +203,6 @@
             </div>
             <h3>Produtos de balcão</h3>
             <p>Opções práticas para quem passa pela padaria todos os dias.</p>
-          </div>
-          <div class="producao__card reveal">
-            <div class="card-carrossel">
-              <div class="card-carrossel__track">
-                <img src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Bolos gelados decorados com coberturas de chocolate, doce de leite e mesclada" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Torta decorada com chantilly, calda de doce de leite, coco e ameixas" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-03.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-04.JPEG" alt="Bolo gelado de coco com abacaxi decorado com chantilly" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-05.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
-              </div>
-              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <button type="button" class="card-carrossel__arrow card-carrossel__arrow--next" aria-label="Próxima foto">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="card-carrossel__dots"></div>
-            </div>
-            <h3>Confeitaria</h3>
-            <p>Doces e produtos selecionados para complementar a experiência da padaria.</p>
           </div>
         </div>
       </div>
@@ -233,8 +237,8 @@
           <!-- Card do interior: carrossel com as fotos do salão da loja -->
           <div class="card-carrossel reveal">
             <div class="card-carrossel__track">
-              <img src="assets/images/interna/interna-01.JPEG" alt="Interior da loja com gôndolas de produtos, adega e corredor do caixa" loading="lazy">
-              <img src="assets/images/interna/interna-02.JPEG" alt="Interior da loja com estantes de biscoitos, geleias, vinhos e produtos coloniais" loading="lazy">
+              <img class="ambiente__foto-interna" src="assets/images/interna/interna-01.JPEG" alt="Interior da loja com gôndolas de produtos, adega e corredor do caixa" loading="lazy">
+              <img class="ambiente__foto-interna" src="assets/images/interna/interna-02.JPEG" alt="Interior da loja com estantes de biscoitos, geleias, vinhos e produtos coloniais" loading="lazy">
             </div>
             <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -251,8 +255,8 @@
           <!-- Card do balcão: carrossel com as fotos das estantes de pães e bolos -->
           <div class="card-carrossel reveal">
             <div class="card-carrossel__track">
-              <img src="assets/images/balcao/balcao-001.JPEG" alt="Estante de pães de forma, bolos caseiros e produtos de padaria embalados" loading="lazy">
               <img src="assets/images/balcao/balcao-002.JPEG" alt="Estante com croissants, folhados, cucas, biscoitos e pães artesanais embalados" loading="lazy">
+              <img src="assets/images/balcao/balcao-001.JPEG" alt="Estante de pães de forma, bolos caseiros e produtos de padaria embalados" loading="lazy">
             </div>
             <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -417,7 +421,7 @@
         <h3>Localização</h3>
         <div class="footer__mapa">
           <iframe
-            src="https://www.google.com/maps?cid=10285436853242290739&output=embed"
+            src="https://www.google.com/maps?q=Bella%20Curitiba%20Panificadora%2C%20Rua%20Vicente%20Ciccarino%2C%2046%20-%20Boa%20Vista%2C%20Curitiba%20-%20PR%2C%2082540-120&output=embed"
             title="Localização da Bella Curitiba Panificadora no Google Maps"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
