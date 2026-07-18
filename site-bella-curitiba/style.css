@@ -140,6 +140,40 @@ section h2:first-child {
   border-color: var(--color-primary-dark);
 }
 
+/* Botão do WhatsApp no hero: translúcido para o vídeo aparecer ao fundo,
+   com borda e ícone no verde do WhatsApp e texto em branco */
+.btn--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgba(37, 211, 102, 0.22);
+  color: var(--color-white);
+  border: 2px solid #25d366;
+  cursor: pointer;
+  /* Fade do fundo verde no hover/toque */
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Mouse em cima (desktop) ou toque (mobile): verde um pouco mais cheio, com fade */
+.btn--whatsapp:hover,
+.btn--whatsapp:active {
+  background-color: rgba(37, 211, 102, 0.42);
+}
+
+.btn--whatsapp:hover .btn__icone-whats,
+.btn--whatsapp:active .btn__icone-whats {
+  fill: var(--color-white);
+}
+
+.btn__icone-whats {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: #25d366;
+  transition: fill 0.35s ease;
+}
+
 .btn--secondary {
   background-color: transparent;
   color: var(--color-white);
