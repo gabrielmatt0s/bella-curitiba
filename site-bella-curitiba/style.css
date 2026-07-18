@@ -1352,9 +1352,9 @@ section h2:first-child {
   /* Máscara escura sobre o vídeo vertical para manter o texto legível */
   .hero__overlay {
     background: linear-gradient(
+      rgba(0, 0, 0, 0.9),
       rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 0.9)
     );
   }
 
