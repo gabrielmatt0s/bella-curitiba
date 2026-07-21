@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bellacuritibapanificadora.com.br/sitemap.xml
