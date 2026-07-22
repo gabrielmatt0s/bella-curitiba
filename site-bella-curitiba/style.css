@@ -1352,6 +1352,16 @@ section h2:first-child {
     display: block;
   }
 
+  /* Máscara mais escura só no mobile (vídeo vertical fica mais claro
+     que o do desktop nesse trecho de produção) */
+  .hero__overlay {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.82)
+    );
+  }
+
   .hero__content {
     padding-top: 48px;
     padding-bottom: 48px;
