@@ -13,7 +13,6 @@
   --color-primary-dark: #001f38;
   --color-primary-light: #0a4a76;
   --color-secondary-dark: #6b380c;
-  --color-overlay: rgba(0, 20, 36, 0.55);
 
   /* Layout */
   --container-width: 1200px;
@@ -310,7 +309,11 @@ section h2:first-child {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background-color: var(--color-overlay);
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.72)
+  );
 }
 
 /* Vídeo vertical do hero: só aparece no mobile (no desktop fica o horizontal) */
@@ -1347,16 +1350,6 @@ section h2:first-child {
 
   .hero__video--mobile {
     display: block;
-  }
-
-  /* Máscara mais leve sobre o vídeo vertical: deixa a produção aparecer,
-     a legibilidade do texto fica por conta do text-shadow abaixo */
-  .hero__overlay {
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.62),
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.62)
-    );
   }
 
   .hero__content {
