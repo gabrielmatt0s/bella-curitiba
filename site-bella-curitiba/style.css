@@ -298,7 +298,7 @@ section h2:first-child {
   background-color: var(--color-primary);
 }
 
-.hero__video {
+.hero__bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -316,8 +316,8 @@ section h2:first-child {
   );
 }
 
-/* Vídeo vertical do hero: só aparece no mobile (no desktop fica o horizontal) */
-.hero__video--mobile {
+/* Imagem vertical do hero: só aparece no mobile (no desktop fica a horizontal) */
+.hero__bg--mobile {
   display: none;
 }
 
@@ -1343,17 +1343,17 @@ section h2:first-child {
     min-height: 80vh;
   }
 
-  /* No mobile entra o vídeo vertical no lugar do horizontal */
-  .hero__video--desktop {
+  /* No mobile entra a imagem vertical no lugar da horizontal */
+  .hero__bg--desktop {
     display: none;
   }
 
-  .hero__video--mobile {
+  .hero__bg--mobile {
     display: block;
   }
 
-  /* Máscara mais escura só no mobile (vídeo vertical fica mais claro
-     que o do desktop nesse trecho de produção) */
+  /* Máscara mais escura só no mobile (imagem vertical fica mais clara
+     que a do desktop nesse trecho de produção) */
   .hero__overlay {
     background: linear-gradient(
       rgba(0, 0, 0, 0.82),
