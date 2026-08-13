@@ -230,3 +230,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const linksWhatsApp = document.querySelectorAll(
+    'a[href*="wa.me"], a[href*="api.whatsapp.com"]'
+  );
+
+  linksWhatsApp.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (typeof gtag !== "function") {
+        return;
+      }
+
+      const textoBotao =
+        link.textContent.trim() ||
+        link.getAttribute("aria-label") ||
+        "sem_texto";
+
+      gtag("event", "clique_whatsapp", {
+        pagina: window.location.pathname,
+        tipo_whatsapp: link.dataset.whatsapp || "nao_informado",
+        local_botao: link.dataset.local || "nao_informado",
+        vaga: link.dataset.vaga || "nao_se_aplica",
+        texto_botao: textoBotao
+      });
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const linksRedesSociais = document.querySelectorAll(
+    '[data-rede-social]'
+  );
+
+  linksRedesSociais.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (typeof gtag !== "function") {
+        return;
+      }
+
+      gtag("event", "clique_rede_social", {
+        pagina: window.location.pathname,
+        rede_social: link.dataset.redeSocial,
+        local_botao: link.dataset.local
+      });
+    });
+  });
+});
