@@ -287,6 +287,57 @@ section h2:first-child {
   display: none;
 }
 
+/* Agrupa os CTAs do header com o botão de menu mobile, para os dois
+   ficarem juntos do lado direito (mesmo comportamento de space-between) */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botão hamburguer: só existe visualmente abaixo de 768px */
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.header__toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.header__toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Transforma as 3 barras em "X" quando o menu está aberto */
+.header__toggle.is-open .header__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__toggle.is-open .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle.is-open .header__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ===================== HERO ===================== */
 .hero {
   position: relative;
@@ -634,12 +685,24 @@ section h2:first-child {
 }
 
 .card-carrossel__dot {
+  position: relative;
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.55);
   padding: 0;
   transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+/* Area de toque maior que a bolinha visivel, sem mudar a aparencia */
+.card-carrossel__dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
 }
 
 .card-carrossel__dot--active {
@@ -777,6 +840,7 @@ section h2:first-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  align-items: start;
   text-align: left;
 }
 
@@ -821,10 +885,18 @@ section h2:first-child {
   margin-bottom: 12px;
 }
 
+/* Limita avaliações longas a 5 linhas para os cards da mesma fileira nao
+   ficarem com alturas muito diferentes; o texto completo continua no DOM
+   (leitores de tela leem tudo) e o card inteiro linka pra avaliacao no Google */
 .depoimentos__texto {
   font-style: italic;
   color: var(--color-text-dark);
   font-size: 0.92rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .depoimentos__meta {
@@ -892,6 +964,7 @@ section h2:first-child {
 }
 
 .depoimentos__dot {
+  position: relative;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -899,6 +972,17 @@ section h2:first-child {
   border: 1px solid var(--color-secondary);
   padding: 0;
   transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+/* Area de toque maior que a bolinha visivel, sem mudar a aparencia */
+.depoimentos__dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
 }
 
 .depoimentos__dot--active {
@@ -1202,7 +1286,7 @@ section h2:first-child {
 }
 
 .footer__copy p {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-muted);
   font-size: 0.8rem;
   text-align: center;
 }
@@ -1324,8 +1408,44 @@ section h2:first-child {
     top: -55px;
   }
 
+  /* Menu mobile: painel escondido por padrão, abre como dropdown
+     ancorado no header (que já é position: sticky) */
   .header__nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 100%);
+    overflow-y: auto;
+    background-color: #e8e8e8;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header__nav.is-open {
+    display: block;
+  }
+
+  .header__menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 12px;
+  }
+
+  .header__menu a {
+    display: block;
+    padding: 14px var(--container-padding);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    white-space: normal;
+  }
+
+  .header__menu a:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .header__toggle {
+    display: flex;
   }
 
   /* Troca dos botões do header no mobile */

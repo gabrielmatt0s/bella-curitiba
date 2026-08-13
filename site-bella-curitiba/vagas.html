@@ -11,7 +11,15 @@
 
   gtag('config', 'G-EP9P122WJ8');
 </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonte Montserrat (corpo do texto): preconnect + carregamento assincrono para nao bloquear o render -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
+
   <title>Vagas de Emprego em Curitiba | Bella Curitiba Panificadora</title>
   <meta name="description" content="Trabalhe na Bella Curitiba Panificadora em Curitiba: vagas de atendente, balconista, padeiro, confeiteiro e mais. Candidate-se pelo WhatsApp do RH.">
   <meta name="robots" content="index, follow">
@@ -50,7 +58,7 @@
         <img src="assets/logos/logo-principal-bella-curitiba.svg" alt="Bella Curitiba Panificadora">
       </a>
 
-      <nav class="header__nav">
+      <nav class="header__nav" id="header-menu">
         <ul class="header__menu">
           <li><a href="index.html">Início</a></li>
           <li><a href="index.html#sobre">Sobre</a></li>
@@ -61,16 +69,32 @@
         </ul>
       </nav>
 
-      <a
-  href="https://wa.me/554191912039?text=Ol%C3%A1%2C%20vim%20pelo%20site%21"
-  class="header__btn"
-  target="_blank"
-  rel="noopener"
-  data-whatsapp="comercial"
-  data-local="header-vagas"
->
-  Fale conosco
-</a>
+      <div class="header__actions">
+        <a
+          href="https://wa.me/554191912039?text=Ol%C3%A1%2C%20vim%20pelo%20site%21"
+          class="header__btn"
+          target="_blank"
+          rel="noopener"
+          data-whatsapp="comercial"
+          data-local="header-vagas"
+        >
+          Fale conosco
+        </a>
+
+        <!-- Menu mobile: visível apenas abaixo de 768px -->
+        <button
+          type="button"
+          class="header__toggle"
+          id="header-toggle"
+          aria-expanded="false"
+          aria-controls="header-menu"
+          aria-label="Abrir menu"
+        >
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -391,6 +415,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260724-1" defer></script>
+  <script src="script.js?v=20260813-1" defer></script>
 </body>
 </html>

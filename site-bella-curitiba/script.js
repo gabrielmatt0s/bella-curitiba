@@ -229,9 +229,55 @@ document.addEventListener("DOMContentLoaded", () => {
       detalhe.hidden = !aberta;
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+  // ===================== MENU MOBILE (HAMBÚRGUER) =====================
+  const headerToggle = document.querySelector(".header__toggle");
+  const headerNav = document.querySelector(".header__nav");
+
+  if (headerToggle && headerNav) {
+    const fecharMenu = () => {
+      headerNav.classList.remove("is-open");
+      headerToggle.classList.remove("is-open");
+      headerToggle.setAttribute("aria-expanded", "false");
+    };
+
+    const abrirMenu = () => {
+      headerNav.classList.add("is-open");
+      headerToggle.classList.add("is-open");
+      headerToggle.setAttribute("aria-expanded", "true");
+    };
+
+    headerToggle.addEventListener("click", () => {
+      if (headerNav.classList.contains("is-open")) {
+        fecharMenu();
+      } else {
+        abrirMenu();
+      }
+    });
+
+    // Fecha ao escolher uma opção do menu
+    headerNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", fecharMenu);
+    });
+
+    // Fecha com a tecla Escape e devolve o foco pro botão
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && headerNav.classList.contains("is-open")) {
+        fecharMenu();
+        headerToggle.focus();
+      }
+    });
+
+    // Fecha ao clicar fora do menu
+    document.addEventListener("click", (e) => {
+      if (!headerNav.classList.contains("is-open")) return;
+      if (headerNav.contains(e.target) || headerToggle.contains(e.target)) return;
+      fecharMenu();
+    });
+  }
+
+  // ===================== TRACKING: CLIQUES NO WHATSAPP (GA4) =====================
+  // Cobre todos os links de WhatsApp do site (comercial na home, RH em vagas.html)
   const linksWhatsApp = document.querySelectorAll(
     'a[href*="wa.me"], a[href*="api.whatsapp.com"]'
   );
@@ -256,11 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const linksRedesSociais = document.querySelectorAll(
-    '[data-rede-social]'
-  );
+
+  // ===================== TRACKING: CLIQUES EM REDES SOCIAIS (GA4) =====================
+  const linksRedesSociais = document.querySelectorAll("[data-rede-social]");
 
   linksRedesSociais.forEach((link) => {
     link.addEventListener("click", () => {
