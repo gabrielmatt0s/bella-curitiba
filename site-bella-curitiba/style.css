@@ -14,9 +14,24 @@
   --color-primary-light: #0a4a76;
   --color-secondary-dark: #6b380c;
 
+  /* Escala tipografica: consolida os tamanhos quase-duplicados que existiam
+     espalhados pelo arquivo (ex.: 0.9rem/0.92rem, 1.05rem/1.06rem) em tokens
+     unicos, sem mudar a hierarquia visual atual */
+  --fs-xs: 0.85rem;
+  --fs-sm: 0.9rem;
+  --fs-base: 1rem;
+  --fs-md: 1.05rem;
+  --fs-lg: 1.18rem;
+  --fs-xl: 1.27rem;
+  --fs-2xl: 2.1rem;
+
   /* Layout */
   --container-width: 1200px;
   --container-padding: 24px;
+  /* O header (logo + 6 links + botao) precisa de mais espaco que o
+     container de 1200px usado pelo resto do site pra caber sem apertar
+     (ver calculo no comentario do breakpoint do menu, mais abaixo) */
+  --header-max-width: 1360px;
   --section-padding: 56px 0;
   --section-padding-mobile: 56px 0;
 
@@ -89,7 +104,7 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  font-size: 2.1rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 12px;
 }
 
@@ -139,30 +154,34 @@ section h2:first-child {
   border-color: var(--color-primary-dark);
 }
 
-/* Botão do WhatsApp no hero: translúcido para o vídeo aparecer ao fundo,
-   com borda e ícone no verde do WhatsApp e texto em branco */
+/* Botão do WhatsApp no hero: fundo navy translucido (identidade da Bella)
+   com borda e icone no verde do WhatsApp — mantem o botao reconhecivel
+   como WhatsApp sem depender do verde inteiro pra isso. No hover o verde
+   assume o fundo, reforcando a acao no toque/clique. */
 .btn--whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: rgba(37, 211, 102, 0.22);
+  background-color: rgba(0, 48, 84, 0.55);
   color: var(--color-white);
   border: 2px solid #25d366;
   cursor: pointer;
-  /* Fade do fundo verde no hover/toque */
-  transition: background-color 0.35s ease, color 0.35s ease;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
-/* Mouse em cima (desktop) ou toque (mobile): verde um pouco mais cheio, com fade */
+/* Mouse em cima (desktop) ou toque (mobile): assume o verde do WhatsApp
+   por inteiro, com texto/icone escuros pra manter contraste alto */
 .btn--whatsapp:hover,
 .btn--whatsapp:active {
-  background-color: rgba(37, 211, 102, 0.42);
+  background-color: #25d366;
+  border-color: #25d366;
+  color: var(--color-primary-dark);
 }
 
 .btn--whatsapp:hover .btn__icone-whats,
 .btn--whatsapp:active .btn__icone-whats {
-  fill: var(--color-white);
+  fill: var(--color-primary-dark);
 }
 
 .btn__icone-whats {
@@ -206,7 +225,7 @@ section h2:first-child {
 }
 
 .header__container {
-  max-width: var(--container-width);
+  max-width: var(--header-max-width);
   margin: 0 auto;
   padding: 12px var(--container-padding);
   display: flex;
@@ -252,7 +271,7 @@ section h2:first-child {
 
 .header__menu a {
   font-family: var(--font-body);
-  font-size: 1.06rem; /* 0.92rem + 15% */
+  font-size: var(--fs-md);
   font-weight: 600;
   color: var(--color-primary);
   padding: 6px 2px;
@@ -273,7 +292,7 @@ section h2:first-child {
   background-color: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   white-space: nowrap;
   transition: background-color var(--transition-base);
 }
@@ -357,13 +376,16 @@ section h2:first-child {
   object-fit: cover;
 }
 
+/* Mascara mais leve que a original: deixa os paes da foto mais visiveis.
+   O contraste do texto passa a contar tambem com text-shadow (abaixo),
+   entao a mascara nao precisa carregar sozinha toda a legibilidade. */
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(0, 0, 0, 0.72),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.72)
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.36),
+    rgba(0, 0, 0, 0.62)
   );
 }
 
@@ -395,6 +417,16 @@ section h2:first-child {
   object-fit: contain;
 }
 
+/* Sombra de apoio para o texto continuar legivel com a mascara mais leve
+   (antes so o mobile tinha isso; agora o desktop tambem ganha uma versao
+   discreta, e o mobile mantem a sua, mais forte, la na media query) */
+.hero__headline,
+.hero__subtitle,
+.hero__horario,
+.hero__horario-titulo {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55), 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
 .hero__headline {
   font-family: var(--font-title);
   font-size: 2.6rem;
@@ -405,16 +437,68 @@ section h2:first-child {
 
 .hero__subtitle {
   font-family: var(--font-body);
-  font-size: 1.27rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 32px;
+  margin-bottom: 26px;
+}
+
+/* ===== Prova social: nota do Google acima da dobra ===== */
+.hero__prova-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 26px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background-color: rgba(137, 73, 15, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero__prova-social-estrelas {
+  position: relative;
+  display: inline-block;
+  font-size: var(--fs-sm);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.hero__prova-social-estrelas-base,
+.hero__prova-social-estrelas-preenchidas {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero__prova-social-estrelas-base {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 4,4 de 5 = 88% preenchido; a camada de cima é recortada nessa largura
+   por cima da mesma sequencia de estrelas em cinza, por baixo */
+.hero__prova-social-estrelas-preenchidas {
+  position: absolute;
+  inset: 0;
+  width: 88%;
+  overflow: hidden;
+  color: #f5b400;
+}
+
+.hero__prova-social-texto {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero__prova-social-texto strong {
+  color: var(--color-white);
+  font-weight: 700;
 }
 
 .hero__horario {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: var(--fs-md);
   font-weight: 600;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.92);
@@ -423,7 +507,7 @@ section h2:first-child {
 
 .hero__horario-titulo {
   display: block;
-  font-size: 0.85rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -460,7 +544,7 @@ section h2:first-child {
 }
 
 .sobre__texto p {
-  font-size: 1.18rem;
+  font-size: var(--fs-lg);
   line-height: 1.75;
   margin-bottom: 16px;
 }
@@ -490,7 +574,7 @@ section h2:first-child {
 }
 
 .sobre__item p {
-  font-size: 1.05rem;
+  font-size: var(--fs-md);
   line-height: 1.6;
 }
 
@@ -721,7 +805,7 @@ section h2:first-child {
 
 .producao__card p {
   padding-bottom: 20px;
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
 }
 
 /* ===================== AMBIENTE ===================== */
@@ -891,7 +975,7 @@ section h2:first-child {
 .depoimentos__texto {
   font-style: italic;
   color: var(--color-text-dark);
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
   display: -webkit-box;
   -webkit-line-clamp: 5;
   line-clamp: 5;
@@ -917,7 +1001,7 @@ section h2:first-child {
 .depoimentos__autor {
   font-weight: 600;
   color: var(--color-primary);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }
 
 .depoimentos__nav {
@@ -1014,7 +1098,7 @@ section h2:first-child {
 }
 
 .trabalhe-conosco__status {
-  font-size: 0.85rem;
+  font-size: var(--fs-xs);
   font-style: italic;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 28px;
@@ -1112,7 +1196,7 @@ section h2:first-child {
 }
 
 .vagas__toggle p {
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
   color: var(--color-text-muted);
   margin: 0;
 }
@@ -1149,7 +1233,7 @@ section h2:first-child {
 
 .vagas__detalhe li {
   list-style: disc;
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
   margin-bottom: 6px;
 }
 
@@ -1159,7 +1243,7 @@ section h2:first-child {
 
 .vagas__obs {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   color: var(--color-text-muted);
   margin-top: 32px;
 }
@@ -1194,7 +1278,7 @@ section h2:first-child {
 
 .footer__bloco h3 {
   color: var(--color-primary);
-  font-size: 1rem;
+  font-size: var(--fs-base);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 16px;
@@ -1202,7 +1286,7 @@ section h2:first-child {
 
 .footer__bloco p {
   color: var(--color-text-muted);
-  font-size: 1.05rem;
+  font-size: var(--fs-md);
   margin-bottom: 8px;
 }
 
@@ -1342,6 +1426,7 @@ section h2:first-child {
 .hero__logo,
 .hero__headline,
 .hero__subtitle,
+.hero__prova-social,
 .hero__horario,
 .hero__buttons {
   opacity: 0;
@@ -1351,8 +1436,9 @@ section h2:first-child {
 .hero__logo { animation: heroLogoFadeIn 0.8s ease-out forwards; animation-delay: 0.1s; }
 .hero__headline { animation-delay: 0.25s; }
 .hero__subtitle { animation-delay: 0.4s; }
-.hero__horario { animation-delay: 0.5s; }
-.hero__buttons { animation-delay: 0.65s; }
+.hero__prova-social { animation-delay: 0.48s; }
+.hero__horario { animation-delay: 0.55s; }
+.hero__buttons { animation-delay: 0.68s; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -1365,6 +1451,7 @@ section h2:first-child {
   .hero__logo,
   .hero__headline,
   .hero__subtitle,
+  .hero__prova-social,
   .hero__horario,
   .hero__buttons {
     opacity: 1;
@@ -1377,7 +1464,10 @@ section h2:first-child {
 }
 
 /* ===================== RESPONSIVIDADE ===================== */
-@media (max-width: 992px) {
+/* Faixa intermediaria (tablets ~993-1100px): o Sobre ganha o mesmo respiro
+   reduzido do mobile/tablet estreito e o rodape passa pra 2 colunas um
+   pouco mais cedo, antes de esbarrar no header (ver bloco de 1024px abaixo) */
+@media (max-width: 1100px) {
   .sobre__container {
     gap: 40px;
   }
@@ -1387,29 +1477,17 @@ section h2:first-child {
   }
 }
 
-@media (max-width: 768px) {
-  :root {
-    --section-padding: var(--section-padding-mobile);
-  }
-
-  .header__container {
-    padding: 12px var(--container-padding);
-  }
-
-  .header__logo {
-    width: 120px;
-    height: 55px;
-  }
-
-  .header__logo img {
-    width: 165px;
-    height: 165px;
-    left: -23px;
-    top: -55px;
-  }
-
-  /* Menu mobile: painel escondido por padrão, abre como dropdown
-     ancorado no header (que já é position: sticky) */
+/* Menu mobile do header: logo (180px) + 6 links (com "Produção Artesanal" e
+   "Trabalhe Conosco") + botao precisam de ~1150-1240px de largura de conteudo
+   pra caber sem apertar. Usar --container-width (1200px, com box-sizing:
+   border-box) sobraria so ~1152px de conteudo depois do padding — insuficiente
+   no pior caso. Por isso o header tem seu proprio teto, --header-max-width
+   (1360px = ~1312px de conteudo, com folga), independente do container de
+   1200px usado pelo resto do site. O breakpoint casa exatamente com esse
+   teto: abaixo dele o container ainda nao chegou no seu tamanho maximo (a
+   largura real seria menor que o necessario), entao o hamburguer continua
+   sendo a opcao segura ate o header ter espaco garantido pra caber inteiro. */
+@media (max-width: 1360px) {
   .header__nav {
     display: none;
     position: absolute;
@@ -1448,7 +1526,7 @@ section h2:first-child {
     display: flex;
   }
 
-  /* Troca dos botões do header no mobile */
+  /* Troca dos botões do header no mobile/tablet */
   .header__btn--fale {
     display: none;
   }
@@ -1456,7 +1534,41 @@ section h2:first-child {
   .header__btn--trabalhe {
     display: inline-block;
     padding: 10px 18px;
-    font-size: 0.85rem;
+    font-size: var(--fs-xs);
+  }
+}
+
+/* Cards de depoimentos um pouco mais estreitos nessa faixa (3 colunas
+   continuam, so ganham menos respiro pra caber melhor) */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .depoimentos__slide {
+    gap: 16px;
+  }
+
+  .depoimentos__card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: var(--section-padding-mobile);
+  }
+
+  .header__container {
+    padding: 12px var(--container-padding);
+  }
+
+  .header__logo {
+    width: 120px;
+    height: 55px;
+  }
+
+  .header__logo img {
+    width: 165px;
+    height: 165px;
+    left: -23px;
+    top: -55px;
   }
 
   .hero {
@@ -1472,13 +1584,14 @@ section h2:first-child {
     display: block;
   }
 
-  /* Máscara mais escura só no mobile (imagem vertical fica mais clara
-     que a do desktop nesse trecho de produção) */
+  /* Mascara um pouco mais leve que a anterior, mas ainda mais forte que a do
+     desktop (a imagem vertical fica mais clara que a do desktop nesse
+     trecho de producao, entao precisa de mais mascara pra manter legivel) */
   .hero__overlay {
     background: linear-gradient(
-      rgba(0, 0, 0, 0.82),
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.82)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.46),
+      rgba(0, 0, 0, 0.72)
     );
   }
 
@@ -1518,6 +1631,13 @@ section h2:first-child {
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 24px;
+  }
+
+  /* Selo um pouco mais compacto em telas bem estreitas, pra caber numa linha */
+  .hero__prova-social {
+    padding: 7px 14px;
+    gap: 8px;
+    margin-bottom: 22px;
   }
 
   .hero__horario {
