@@ -49,6 +49,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon-bella-curitiba-32x32.png">
   <link rel="stylesheet" href="style.css?v=20260813-3">
 
+  <!-- Preload da imagem do hero (LCP): so a variante certa por dispositivo e priorizada -->
+  <link rel="preload" as="image" href="assets/images/video-hero/img-hero-mobile.webp" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="assets/images/video-hero/img-hero-desktop.webp" media="(min-width: 769px)">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -146,10 +150,11 @@
 
     <!-- ===================== HERO ===================== -->
     <section id="inicio" class="hero">
-      <!-- Imagem horizontal da produção: exibida somente no desktop -->
-      <img class="hero__bg hero__bg--desktop" src="assets/images/video-hero/img-hero-desktop.jpeg" alt="" fetchpriority="high">
-      <!-- Imagem vertical da produção: exibida somente no mobile -->
-      <img class="hero__bg hero__bg--mobile" src="assets/images/video-hero/img-hero-mobile.jpeg" alt="" fetchpriority="high">
+      <!-- Imagem de fundo do hero: no mobile entra a vertical, no desktop a horizontal -->
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/images/video-hero/img-hero-mobile.webp">
+        <img class="hero__bg" src="assets/images/video-hero/img-hero-desktop.webp" alt="" width="1402" height="1122" fetchpriority="high">
+      </picture>
       <div class="hero__overlay"></div>
 
       <div class="hero__content">
@@ -216,7 +221,7 @@
         </div>
 
         <div class="sobre__imagem reveal">
-          <img src="assets/images/fachada/fachada-secao-sobre.jpeg" alt="Fachada da Bella Curitiba Panificadora">
+          <img src="assets/images/fachada/fachada-secao-sobre-1280w.webp" srcset="assets/images/fachada/fachada-secao-sobre-640w.webp 640w, assets/images/fachada/fachada-secao-sobre-1280w.webp 1280w" sizes="(max-width: 768px) 90vw, 437px" width="1280" height="1337" alt="Fachada da Bella Curitiba Panificadora" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -231,11 +236,11 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
-                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-01.JPEG" alt="Pães multigrãos cobertos de sementes de gergelim, linhaça e girassol" loading="lazy">
-                <img class="card-carrossel__img--pao-rustico" src="assets/images/paes-e-broas/pao-02.JPEG" alt="Pão rústico de fermentação natural com casca dourada e farinha" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-03.JPEG" alt="Pão integral redondo com sementes e grãos" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-04.JPEG" alt="Pão caseiro de casca dourada e miolo macio" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/broa-02.JPEG" alt="Broa escura com cobertura de gergelim e linhaça" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-01-1280w.webp" srcset="assets/images/paes-e-broas/pao-01-640w.webp 640w, assets/images/paes-e-broas/pao-01-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1720" alt="Pães multigrãos cobertos de sementes de gergelim, linhaça e girassol" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--pao-rustico" src="assets/images/paes-e-broas/pao-02-1280w.webp" srcset="assets/images/paes-e-broas/pao-02-640w.webp 640w, assets/images/paes-e-broas/pao-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1963" alt="Pão rústico de fermentação natural com casca dourada e farinha" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-03-1280w.webp" srcset="assets/images/paes-e-broas/pao-03-640w.webp 640w, assets/images/paes-e-broas/pao-03-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Pão integral redondo com sementes e grãos" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/pao-04-1280w.webp" srcset="assets/images/paes-e-broas/pao-04-640w.webp 640w, assets/images/paes-e-broas/pao-04-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Pão caseiro de casca dourada e miolo macio" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/paes-e-broas/broa-02-1280w.webp" srcset="assets/images/paes-e-broas/broa-02-640w.webp 640w, assets/images/paes-e-broas/broa-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Broa escura com cobertura de gergelim e linhaça" loading="lazy" decoding="async">
               </div>
               <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -255,11 +260,11 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
-                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-01.JPEG" alt="Focaccia de fermentação natural com tomatinhos e alecrim" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-02.JPEG" alt="Fatia de focaccia com berinjela, azeitonas e legumes assados" loading="lazy">
-                <img class="card-carrossel__img--rodape" src="assets/images/fermentacao-natural/fermentacao-natural-03.JPEG" alt="Ciabattas de azeitona com casca dourada e crocante" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-04.JPEG" alt="Baguetes rústicas com flor de sal e alecrim" loading="lazy">
-                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-05.JPEG" alt="Baguetes recheadas de fermentação natural" loading="lazy">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-01-1280w.webp" srcset="assets/images/fermentacao-natural/fermentacao-natural-01-640w.webp 640w, assets/images/fermentacao-natural/fermentacao-natural-01-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Focaccia de fermentação natural com tomatinhos e alecrim" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-02-1280w.webp" srcset="assets/images/fermentacao-natural/fermentacao-natural-02-640w.webp 640w, assets/images/fermentacao-natural/fermentacao-natural-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1432" alt="Fatia de focaccia com berinjela, azeitonas e legumes assados" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--rodape" src="assets/images/fermentacao-natural/fermentacao-natural-03-1280w.webp" srcset="assets/images/fermentacao-natural/fermentacao-natural-03-640w.webp 640w, assets/images/fermentacao-natural/fermentacao-natural-03-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1963" alt="Ciabattas de azeitona com casca dourada e crocante" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-04-1280w.webp" srcset="assets/images/fermentacao-natural/fermentacao-natural-04-640w.webp 640w, assets/images/fermentacao-natural/fermentacao-natural-04-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1344" alt="Baguetes rústicas com flor de sal e alecrim" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--base" src="assets/images/fermentacao-natural/fermentacao-natural-05-1280w.webp" srcset="assets/images/fermentacao-natural/fermentacao-natural-05-640w.webp 640w, assets/images/fermentacao-natural/fermentacao-natural-05-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1506" alt="Baguetes recheadas de fermentação natural" loading="lazy" decoding="async">
               </div>
               <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -279,11 +284,11 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
-                <img src="assets/images/confeitaria/confeitaria-04.JPEG" alt="Bolo gelado de coco com abacaxi decorado com chantilly" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-02.JPEG" alt="Torta decorada com chantilly, calda de doce de leite, coco e ameixas" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-03.JPEG" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy">
-                <img class="card-carrossel__img--bolos" src="assets/images/confeitaria/confeitaria-01.JPEG" alt="Bolos gelados decorados com coberturas de chocolate, doce de leite e mesclada" loading="lazy">
-                <img src="assets/images/confeitaria/confeitaria-05.JPEG" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy">
+                <img src="assets/images/confeitaria/confeitaria-04-1280w.webp" srcset="assets/images/confeitaria/confeitaria-04-640w.webp 640w, assets/images/confeitaria/confeitaria-04-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Bolo gelado de coco com abacaxi decorado com chantilly" loading="lazy" decoding="async">
+                <img src="assets/images/confeitaria/confeitaria-02-1280w.webp" srcset="assets/images/confeitaria/confeitaria-02-640w.webp 640w, assets/images/confeitaria/confeitaria-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Torta decorada com chantilly, calda de doce de leite, coco e ameixas" loading="lazy" decoding="async">
+                <img src="assets/images/confeitaria/confeitaria-03-1280w.webp" srcset="assets/images/confeitaria/confeitaria-03-640w.webp 640w, assets/images/confeitaria/confeitaria-03-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Vitrine de confeitaria com tortas, cheesecakes, bombons e doces variados" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--bolos" src="assets/images/confeitaria/confeitaria-01-1280w.webp" srcset="assets/images/confeitaria/confeitaria-01-640w.webp 640w, assets/images/confeitaria/confeitaria-01-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1707" alt="Bolos gelados decorados com coberturas de chocolate, doce de leite e mesclada" loading="lazy" decoding="async">
+                <img src="assets/images/confeitaria/confeitaria-05-1280w.webp" srcset="assets/images/confeitaria/confeitaria-05-640w.webp 640w, assets/images/confeitaria/confeitaria-05-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Vitrine de doces com pudins, folhados, quindins e pastéis de Belém" loading="lazy" decoding="async">
               </div>
               <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -303,11 +308,11 @@
           <div class="producao__card reveal">
             <div class="card-carrossel">
               <div class="card-carrossel__track">
-                <img src="assets/images/balcao/balcao-04.JPEG" alt="Prateleiras de bolos caseiros e biscoitos variados" loading="lazy">
-                <img src="assets/images/balcao/balcao-02.JPEG" alt="Geladeira de frios com queijos e embutidos fatiados" loading="lazy">
-                <img class="card-carrossel__img--direita" src="assets/images/balcao/balcao-03.JPEG" alt="Balcão de frios com linguiças artesanais, queijos coloniais e embutidos" loading="lazy">
-                <img src="assets/images/balcao/balcao-05.JPEG" alt="Vitrine de pães com produção diária, pães de queijo e baguetes" loading="lazy">
-                <img src="assets/images/balcao/balcao-01.JPEG" alt="Vitrine de salgados com coxinhas, sfihas, mini pastéis, croissants e empadões" loading="lazy">
+                <img src="assets/images/balcao/balcao-04-1280w.webp" srcset="assets/images/balcao/balcao-04-640w.webp 640w, assets/images/balcao/balcao-04-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Prateleiras de bolos caseiros e biscoitos variados" loading="lazy" decoding="async">
+                <img src="assets/images/balcao/balcao-02-1280w.webp" srcset="assets/images/balcao/balcao-02-640w.webp 640w, assets/images/balcao/balcao-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="1205" alt="Geladeira de frios com queijos e embutidos fatiados" loading="lazy" decoding="async">
+                <img class="card-carrossel__img--direita" src="assets/images/balcao/balcao-03-1280w.webp" srcset="assets/images/balcao/balcao-03-640w.webp 640w, assets/images/balcao/balcao-03-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Balcão de frios com linguiças artesanais, queijos coloniais e embutidos" loading="lazy" decoding="async">
+                <img src="assets/images/balcao/balcao-05-1280w.webp" srcset="assets/images/balcao/balcao-05-640w.webp 640w, assets/images/balcao/balcao-05-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Vitrine de pães com produção diária, pães de queijo e baguetes" loading="lazy" decoding="async">
+                <img src="assets/images/balcao/balcao-01-1280w.webp" srcset="assets/images/balcao/balcao-01-640w.webp 640w, assets/images/balcao/balcao-01-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 410px" width="1280" height="960" alt="Vitrine de salgados com coxinhas, sfihas, mini pastéis, croissants e empadões" loading="lazy" decoding="async">
               </div>
               <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -339,8 +344,8 @@
           <!-- Primeiro card: carrossel com as duas fotos da fachada -->
           <div class="card-carrossel reveal">
             <div class="card-carrossel__track">
-              <img src="assets/images/fachada/fachada-completa.jpg" alt="Fachada completa da Bella Curitiba Panificadora vista da rua" loading="lazy">
-              <img class="ambiente__foto-letreiro" src="assets/images/fachada/fachada-2.jpeg" alt="Fachada da Bella Curitiba Panificadora com letreiro em relevo" loading="lazy">
+              <img src="assets/images/fachada/fachada-completa-1280w.webp" srcset="assets/images/fachada/fachada-completa-640w.webp 640w, assets/images/fachada/fachada-completa-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="960" alt="Fachada completa da Bella Curitiba Panificadora vista da rua" loading="lazy" decoding="async">
+              <img class="ambiente__foto-letreiro" src="assets/images/fachada/fachada-2-1280w.webp" srcset="assets/images/fachada/fachada-2-640w.webp 640w, assets/images/fachada/fachada-2-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="1707" alt="Fachada da Bella Curitiba Panificadora com letreiro em relevo" loading="lazy" decoding="async">
             </div>
             <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -357,8 +362,8 @@
           <!-- Card do interior: carrossel com as fotos do salão da loja -->
           <div class="card-carrossel reveal">
             <div class="card-carrossel__track">
-              <img class="ambiente__foto-interna" src="assets/images/interna/interna-01.JPEG" alt="Interior da loja com gôndolas de produtos, adega e corredor do caixa" loading="lazy">
-              <img class="ambiente__foto-interna" src="assets/images/interna/interna-02.JPEG" alt="Interior da loja com estantes de biscoitos, geleias, vinhos e produtos coloniais" loading="lazy">
+              <img class="ambiente__foto-interna" src="assets/images/interna/interna-01-1280w.webp" srcset="assets/images/interna/interna-01-640w.webp 640w, assets/images/interna/interna-01-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="720" alt="Interior da loja com gôndolas de produtos, adega e corredor do caixa" loading="lazy" decoding="async">
+              <img class="ambiente__foto-interna" src="assets/images/interna/interna-02-1280w.webp" srcset="assets/images/interna/interna-02-640w.webp 640w, assets/images/interna/interna-02-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="720" alt="Interior da loja com estantes de biscoitos, geleias, vinhos e produtos coloniais" loading="lazy" decoding="async">
             </div>
             <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -375,8 +380,8 @@
           <!-- Card do balcão: carrossel com as fotos das estantes de pães e bolos -->
           <div class="card-carrossel reveal">
             <div class="card-carrossel__track">
-              <img src="assets/images/balcao/balcao-002.JPEG" alt="Estante com croissants, folhados, cucas, biscoitos e pães artesanais embalados" loading="lazy">
-              <img src="assets/images/balcao/balcao-001.JPEG" alt="Estante de pães de forma, bolos caseiros e produtos de padaria embalados" loading="lazy">
+              <img src="assets/images/balcao/balcao-002-1280w.webp" srcset="assets/images/balcao/balcao-002-640w.webp 640w, assets/images/balcao/balcao-002-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="720" alt="Estante com croissants, folhados, cucas, biscoitos e pães artesanais embalados" loading="lazy" decoding="async">
+              <img src="assets/images/balcao/balcao-001-1280w.webp" srcset="assets/images/balcao/balcao-001-640w.webp 640w, assets/images/balcao/balcao-001-1280w.webp 1280w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 554px" width="1280" height="720" alt="Estante de pães de forma, bolos caseiros e produtos de padaria embalados" loading="lazy" decoding="async">
             </div>
             <button type="button" class="card-carrossel__arrow card-carrossel__arrow--prev" aria-label="Foto anterior">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -407,7 +412,7 @@
             <div class="depoimentos__slide reveal--group">
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNKb3YtcnNnRRAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/camila-belato.webp" alt="Foto de Camila Belato" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/camila-belato.webp" alt="Foto de Camila Belato" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Camila Belato</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -423,7 +428,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUN3MjZuSkNnEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-muller.webp" alt="Foto de Leandro Müller" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-muller.webp" alt="Foto de Leandro Müller" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Leandro Müller</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -439,7 +444,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURWdTYyb2lnRRAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/ana-luiza-camilo.webp" alt="Foto de Ana Luiza Camilo" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/ana-luiza-camilo.webp" alt="Foto de Ana Luiza Camilo" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Ana Luiza Camilo</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -458,7 +463,7 @@
             <div class="depoimentos__slide reveal--group">
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR4b05fQVB3EAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/scheila-mara.webp" alt="Foto de Scheila Mara" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/scheila-mara.webp" alt="Foto de Scheila Mara" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Scheila Mara</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -474,7 +479,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURid0tIdlhnEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/jhonatas-zahorcak.webp" alt="Foto de Jhonatas Zahorcak" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/jhonatas-zahorcak.webp" alt="Foto de Jhonatas Zahorcak" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Jhonatas Zahorcak</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -490,7 +495,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3N0ppelRBEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/ednilson-silva.webp" alt="Foto de Ednilson Silva" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/ednilson-silva.webp" alt="Foto de Ednilson Silva" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Ednilson Silva</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -509,7 +514,7 @@
             <div class="depoimentos__slide reveal--group">
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xsR2N6Tk1aM1prWVRWbmNEZGFjV1p2UTJ0RmRIYxAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/marcus-ziemann.webp" alt="Foto de Marcus Ziemann" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/marcus-ziemann.webp" alt="Foto de Marcus Ziemann" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Marcus Ziemann</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -525,7 +530,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sT2VsUktSa1JsZEhkV1ZtZFJVek5sV25BdFVIYxAB!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-marques-hoffmann.webp" alt="Foto de Leandro Marques Hoffmann" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/leandro-marques-hoffmann.webp" alt="Foto de Leandro Marques Hoffmann" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Leandro Marques Hoffmann</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -541,7 +546,7 @@
               </a>
               <a href="https://www.google.com/maps/reviews/@-25.3987736,-49.2516448,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURCeXZpd0ZBEAE!2m1!1s0x0:0x8ebd3652cd37e233?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="depoimentos__card reveal">
                 <div class="depoimentos__meta">
-                  <img class="depoimentos__avatar" src="./assets/images/clientes/douglas-presibella.webp" alt="Foto de Douglas Presibella" loading="lazy" width="300" height="300">
+                  <img class="depoimentos__avatar" src="./assets/images/clientes/douglas-presibella.webp" alt="Foto de Douglas Presibella" loading="lazy" decoding="async" width="300" height="300">
                   <div class="depoimentos__autor-bloco">
                     <p class="depoimentos__autor">Douglas Presibella</p>
                     <div class="depoimentos__nota" aria-label="5 estrelas">
@@ -637,9 +642,12 @@
     data-local="footer-home"
   >
     <img
-      src="assets/logo-botao/botao-instagram-transparente.png"
+      src="assets/logo-botao/botao-instagram-transparente.webp"
       alt=""
       loading="lazy"
+      decoding="async"
+      width="128"
+      height="128"
     >
   </a>
 </li>
@@ -655,9 +663,12 @@
     data-local="footer-home"
   >
     <img
-      src="assets/logo-botao/botao-facebook-transparente.png"
+      src="assets/logo-botao/botao-facebook-transparente.webp"
       alt=""
       loading="lazy"
+      decoding="async"
+      width="128"
+      height="128"
     >
   </a>
 </li>
@@ -672,7 +683,7 @@
     data-whatsapp="comercial"
     data-local="footer-home"
   >
-    <img src="assets/logo-botao/botao-whatsapp-transparente.png" alt="" loading="lazy">
+    <img src="assets/logo-botao/botao-whatsapp-transparente.webp" alt="" loading="lazy" decoding="async" width="128" height="128">
   </a>
 </li>
 

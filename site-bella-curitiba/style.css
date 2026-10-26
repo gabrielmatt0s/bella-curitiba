@@ -381,6 +381,13 @@ section h2:first-child {
   background-color: var(--color-primary);
 }
 
+/* O <picture> em volta do .hero__bg nao deve virar uma caixa de flex item:
+   display:contents remove a caixa do <picture> e deixa o <img> (absolute)
+   se comportar exatamente como antes, direto filho do .hero (flex) */
+.hero picture {
+  display: contents;
+}
+
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -400,11 +407,6 @@ section h2:first-child {
     rgba(0, 0, 0, 0.36),
     rgba(0, 0, 0, 0.62)
   );
-}
-
-/* Imagem vertical do hero: só aparece no mobile (no desktop fica a horizontal) */
-.hero__bg--mobile {
-  display: none;
 }
 
 .hero__content {
@@ -980,7 +982,7 @@ section h2:first-child {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("./assets/logo-botao/logo-google-maps.png") no-repeat center / contain;
+  background: url("./assets/logo-botao/logo-google-maps.webp") no-repeat center / contain;
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
@@ -1694,15 +1696,6 @@ section h2:first-child {
 
   .hero {
     min-height: 80vh;
-  }
-
-  /* No mobile entra a imagem vertical no lugar da horizontal */
-  .hero__bg--desktop {
-    display: none;
-  }
-
-  .hero__bg--mobile {
-    display: block;
   }
 
   /* Mascara um pouco mais leve que a anterior, mas ainda mais forte que a do
