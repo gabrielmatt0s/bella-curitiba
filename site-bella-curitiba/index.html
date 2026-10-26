@@ -2,14 +2,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EP9P122WJ8"></script>
+  <!-- Google tag (gtag.js): fila criada na hora, biblioteca real so carrega
+       depois do load da pagina ou na primeira interacao do usuario (o que
+       vier primeiro), pra nao competir por banda com o carregamento inicial -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EP9P122WJ8');
+
+  (function () {
+    var carregado = false;
+    function carregarGA() {
+      if (carregado) return;
+      carregado = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EP9P122WJ8';
+      document.head.appendChild(script);
+    }
+    var eventosInteracao = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+    eventosInteracao.forEach(function (evento) {
+      window.addEventListener(evento, carregarGA, { once: true, passive: true });
+    });
+    if (document.readyState === 'complete') {
+      carregarGA();
+    } else {
+      window.addEventListener('load', carregarGA, { once: true });
+    }
+  })();
 </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,7 +173,7 @@
     <section id="inicio" class="hero">
       <!-- Imagem de fundo do hero: no mobile entra a vertical, no desktop a horizontal -->
       <picture>
-        <source media="(max-width: 768px)" srcset="assets/images/video-hero/img-hero-mobile.webp">
+        <source media="(max-width: 768px)" srcset="assets/images/video-hero/img-hero-mobile.webp" width="720" height="960">
         <img class="hero__bg" src="assets/images/video-hero/img-hero-desktop.webp" alt="" width="1402" height="1122" fetchpriority="high">
       </picture>
       <div class="hero__overlay"></div>
